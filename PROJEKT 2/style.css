@@ -1,0 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+.grid {
+  border: 10px solid #000;
+  flex-wrap: wrap;
+}
