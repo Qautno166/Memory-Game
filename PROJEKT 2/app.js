@@ -14,7 +14,10 @@ const cardArray = [
 //Generuje
 let flipCard = [];
 let flipCardId = [];
+console.log(cardArray);
+
 const result = document.querySelector(".result");
+let displayResult = [0];
 cardArray.sort((a, b) => 0.5 - Math.random());
 
 const grid = document.querySelector(".grid");
@@ -32,9 +35,11 @@ function createBoard() {
 createBoard();
 
 function checkMatch() {
+  result.innerHTML = displayResult.length - 1;
   const cards = document.querySelectorAll("img");
   const optionOneId = flipCardId[0];
   const optionTwoId = flipCardId[1];
+  if (displayResult.length >= 6) alert("Congrat's you Win");
   if (flipCardId.length < 2) {
     return;
   }
@@ -51,8 +56,13 @@ function checkMatch() {
     alert("You found Match");
     cards[optionOneId].setAttribute("src", "images/white.png");
     cards[optionTwoId].setAttribute("src", "images/white.png");
-    cards[optionOneId].removeEventListener("click", flipCard);
-    cards[optionTwoId].removeEventListener("click", flipCard);
+    //Blokada karty odkrytej
+    cards[optionOneId].removeEventListener("click", getFlip);
+    cards[optionTwoId].removeEventListener("click", getFlip);
+
+    displayResult.push(1);
+    result.innerHTML = displayResult.length - 1;
+    if (displayResult.length >= 6) alert("Congrat's you Win");
   } else {
     cards[optionOneId].setAttribute("src", "images/blank.png");
     cards[optionTwoId].setAttribute("src", "images/blank.png");
@@ -65,17 +75,20 @@ function checkMatch() {
 }
 
 function getFlip() {
+  console.log(getFlip);
   let cardId = this.getAttribute("data-id");
   console.log(cardId);
   console.log(cardArray[cardId].img);
-  flipCard.push(cardArray[cardId].img);
+  flipCard.push(cardArray[cardId].name);
   flipCardId.push(cardId);
   console.log(flipCard);
   console.log(flipCardId);
   this.setAttribute("src", cardArray[cardId].img);
   if (flipCard.length < 2) {
-    return getFlip;
+    return;
   } else {
-    checkMatch();
+    setTimeout(checkMatch, 500);
   }
 }
+console.log(displayResult);
+result.innerHTML = displayResult;

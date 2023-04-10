@@ -1,9 +1,24 @@
 * {
   box-sizing: border-box;
-}
-.grid {
-  border: 10px solid #000;
-  flex-wrap: wrap;
-  trans
+  align-content: center;
 }
 
+.grid {
+  height: 460px;
+  width: 350px;
+  display: flex;
+  border: 10px solid #000;
+  flex-wrap: wrap;
+  margin: auto;
+  justify-content: center;
+}
+
+.grid img {
+  border: 1px solid #000;
+}
+.score-container {
+  font-size: 50px;
+  display: block;
+  text-align: center;
+  justify-content: center;
+}
