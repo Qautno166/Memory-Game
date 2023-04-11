@@ -1,16 +1,19 @@
 # Memory Card Game Readme
+
 This is a simple Memory Card Game built using HTML, CSS, and JavaScript. 
 The game randomly generates a set of cards with images of different food items,
 and the player has to match pairs of cards with the same image by flipping them over one at a time.
 
 # How to Play
+
 Click on a card to flip it over and reveal the image.
 Click on another card to reveal its image.
 If the two cards match, they will stay flipped over.
 If the two cards do not match, they will be flipped back over, and you can try again.
 Keep playing until you have matched all the pairs of cards and won the game.
 
-#Code Overview
+# Code Overview
+
 The code uses strict mode, which enforces more strict rules for JavaScript code and 
 helps to avoid common mistakes.
 
@@ -33,7 +36,8 @@ element in the HTML is updated to show the current score.
 
 If all pairs of cards have been matched, a congratulatory message is displayed.
 
-#Conclusion
+# Conclusion
+
 This is a simple implementation of a memory card game that demonstrates the use of JavaScript to create
 interactivity in web applications. It can be modified and expanded upon to create more complex 
 games or other interactive web applications.
